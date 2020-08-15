@@ -20,7 +20,14 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('aboutUs', 'contactUs', 'viewArticle', 'logout');
+        $this->middleware('auth')->except(
+            'aboutUs',
+            'contactUs',
+            'viewArticle',
+            'logout',
+            'authorGuideline',
+            'downloadGuidelines'
+        );
     }
 
     /**
@@ -76,7 +83,7 @@ class HomeController extends Controller
     public function authorGuideline() {
         $articles = Articles::all();
         $categories = Category::all();
-        return view('pages.authorguideline', compact('articles', 'categories'));
+        return view('pages.authorguide', compact('articles', 'categories'));
     }
 
     public function viewArticle($id) {
@@ -143,5 +150,10 @@ class HomeController extends Controller
 //        Mail::to($request->email)->send(new SuccessMail());
 
         return redirect()->back()->with('info', 'Article posted successfully 🙂');
+    }
+
+    public function downloadGuidelines()
+    {
+        return response()->download(public_path('assets/authorguideline/AuthorGuidelines.pdf'));
     }
 }

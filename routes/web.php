@@ -55,7 +55,7 @@ Route::get('/single', 'HomeController@contactUs')->name('single.article');
 
 Route::get('/submitarticle', 'HomeController@submitArticle')->name('submitarticle');
 //
-//Route::get('/authorguideline', 'HomeController@authorGuideline')->name('authorguideline');
+Route::get('/authorguideline', 'HomeController@authorGuideline')->name('authorguideline');
 
 Route::get('/checkout', 'HomeController@checkout')->name('checkout');
 
@@ -66,6 +66,8 @@ Route::get('/article/{id}/view', 'HomeController@viewArticle')->name('article.vi
 Route::post('/postarticle', 'HomeController@postArticle')->name('article.post');
 
 Route::get('/search', 'SearchController@getResults')->name('article.search');
+
+Route::get('/download', 'HomeController@downloadGuidelines')->name('guideline.download');
 
 /**
  *  Admin Ends

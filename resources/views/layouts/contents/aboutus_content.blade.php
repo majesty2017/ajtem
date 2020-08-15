@@ -40,15 +40,62 @@
                     <div class="section-heading">
                         <h5>About Us</h5>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur mauris id scelerisque eleifend. Nunc vestibulum cursus quam at scelerisque. Aliquam quis varius orci, vel tincidunt est. Proin ac tincidunti, atmots interdum erat. Maecenas neque lorem, aliquet in tempus non, efficitur ac neque.</p>
-                    <p>Phasellus elefend odio quis dolor pretium condimentu. Morbi quis mauris ipsum urna eu fermentum bentons Suspendisse auctor magna ac porta ornare. Fusce finibus nibh at lacinia lobortis.</p>
+                    <p>
+                        The African Journal of Technical Education and Management (AJTEM) is an international peer-reviewed
+                        Journal with the aim of publishing research findings in the fields of Science,
+                        Technology, Arts, Business and Management Education. It embodies a blend of an interdisciplinary
+                        community of researchers, academics and practitioners (including policy makers) as its contributors
+                        and for its readership.
+                    </p>
+                    <p>
+                        The Journal is published twice in a year. The first in June and the second in December.
+                        The Journal publishes solicited (through conference call)
+                        and unsolicited (through online platform) manuscripts.
+                    </p>
+{{--                    Interest--}}
+                    <h6>AREAS OF INTEREST</h6>
+                    <p>The main areas to be covered by the Journal shall include:</p>
                     <ul>
-                        <li><i class="fa fa-check"></i> Vivamus starlord finibus, dictum massa eget, suscipit metus nami at tristique elit started.</li>
-                        <li><i class="fa fa-check"></i> Cras ipsum libero, suscipit vitamin tellus vitae, feugiat ultricies purus praesent gamora.</li>
-                        <li><i class="fa fa-check"></i> Proin ex sem, ultrices drax the sit amet, facilisis destroyer et odio profession risusest.</li>
-                        <li><i class="fa fa-check"></i> Morbi maximus mauris eget groot dignissim, in laoreet justo facilisis.</li>
+                        <li><i class="fa fa-check"></i> Science and Engineering (All fields of Science and Engineering including Building Technology and Survey works)</li>
+                        <li><i class="fa fa-check"></i> Technology and Innovation (including ICT).</li>
+                        <li><i class="fa fa-check"></i> Applied Sciences (including Statistics, Environmental Studies, Hospitality and Tourism)</li>
+                        <li><i class="fa fa-check"></i> Business and Management (including Accounting, Banking and Finance, International Business, Marketing, Secretaryship, Purchasing and Supply, Planning and Logistics)</li>
+                        <li><i class="fa fa-check"></i> Social Sciences (including Economics, Development, Education)</li>
+                        <li><i class="fa fa-check"></i> The Arts (including Fashion Design, Industrial Art, Jewelry and Cosmetology).</li>
                     </ul>
-                    <img class="mt-15" src="{{ URL::to('assets/img/bg-img/35.jpg') }}" alt="">
+{{--                    category--}}
+                    <h6>ARTICLE CATEGORIES</h6>
+                    <p>The main areas to be covered by the Journal shall include:</p>
+                    <ul>
+                        @foreach($categories as $category)
+                        <li><i class="fa fa-check"></i> {{$category->name}}</li>
+                        @endforeach
+                    </ul>
+                    {{--                    REVIEW PROCESS--}}
+                    <h6>REVIEW PROCESS</h6>
+                    <p>
+                        Submission of an article to AJTEM implies that the research described has not been published
+                        previously (except in the form of an abstract or an academic dissertation, thesis or research
+                        project). The covering letter should explicitly state that the manuscript is not under consideration
+                        for publication elsewhere. It is important that all authors approve the submission of the manuscript
+                        for consideration for publication. To verify originality, all manuscripts submitted to AJTEM will be
+                        checked using originality detection software. Following, every manuscript submitted to AJTEM shall
+                        undergo double blind review. Three reviewers shall be assigned to review the manuscript and responses
+                        from at least two reviewers and the Editor’s review of the paper shall be used to make a decision to
+                        accept the paper or not.
+                    </p>
+                    {{--                    ETHICS POLICY--}}
+                    <h6>ETHICS POLICY</h6>
+                    <p>
+                        For all submitted manuscripts involving human participants’ research conducted by one or more of
+                        the authors, the authors must communicate the following to the editors before the manuscript can
+                        be reviewed. (1) The authors have obtained approval from all appropriate Institutional Review
+                        Boards or equivalent institutional oversight authorities and (2) the data collection efforts do not
+                        involve deception of human subjects even if the protocol was approved by all appropriate
+                        Institutional Review Boards. If authors are uncertain whether their data collection procedure
+                        involved deception, please contact one of the editors.
+                    </p>
+                    <img class="mt-15" src="{{ asset('assets/img/bg-img/35.jpg') }}" alt="">
 
                     <!-- Team Member Area -->
                     <div class="section-heading mt-30">

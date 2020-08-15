@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Ajtem | Submit Article
+    Submit Article
 @endsection
 
 @section('content')

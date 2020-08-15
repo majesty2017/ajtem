@@ -37,7 +37,7 @@
                 <div class="contact-content-area bg-white mb-30 p-30 box-shadow">
                     <!-- Google Maps -->
                     <div class="map-area mb-30">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22236.40558254599!2d-118.25292394686001!3d34.057682914027104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z4Kay4Ka4IOCmj-CmnuCnjeCmnOCnh-CmsuCnh-CmuCwg4KaV4KeN4Kav4Ka-4Kay4Ka_4Kar4KeL4Kaw4KeN4Kao4Ka_4Kav4Ka84Ka-LCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1532328708137" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3963.442765649097!2d0.4678668141611413!3d6.591760374196288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgh!4v1597366232032!5m2!1sen!2sgh" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
 
                     <!-- Section Title -->
@@ -46,7 +46,10 @@
                     </div>
 
                     <div class="contact-information mb-30">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur mauris id scelerisque eleifend. Nunc vestibulum cursus quam at scelerisque. Aliquam quis varius orci, vel tincidunt est. Proin ac tincidunti, atmots interdum erat. Maecenas neque lorem, aliquet in tempus non, efficitur ac neque.</p>
+                        <p>
+                            We are ajtem who believe in the work and well being of our customers, partners and clients.
+                            We are available 24/7 to support and answer your queries.
+                        </p>
 
                         <!-- Single Contact Info -->
                         <div class="single-contact-info d-flex align-items-center">
@@ -54,8 +57,13 @@
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </div>
                             <div class="text">
-                                <p>Our Office:</p>
-                                <h6>17 HTU, Ho , GH</h6>
+                                <p><strong>The Managing Editor</strong> <br> African Journal of Technical Education and Management</p>
+                                <address>
+                                    Ho Technical University (HTU) <br>
+                                    P. O. Box HP 217 <br>
+                                    Ho - V/R <br>
+                                    Ghana <br>
+                                </address>
                             </div>
                         </div>
 
@@ -66,7 +74,7 @@
                             </div>
                             <div class="text">
                                 <p>Email:</p>
-                                <h6>info@ajtem.com</h6>
+                                <h6>ajtem@htu.edu.gh</h6>
                             </div>
                         </div>
 
@@ -76,8 +84,12 @@
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </div>
                             <div class="text">
-                                <p>Phone:</p>
-                                <h6>(+233) 542-661-103</h6>
+                                <p>For more information please contact the following:</p>
+                                <ul>
+                                    <li><a href=""><i class="fa fa-check"> Prof. Ben Honyenuga (+233 244515420)</i></a></li>
+                                    <li><a href=""><i class="fa fa-check"> Dr. Peter K.A. Agbodza (+233 542442025)</i></a></li>
+                                    <li><a href=""><i class="fa fa-check"> Mr. Magnus Akaba (+233 243483396)</i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>

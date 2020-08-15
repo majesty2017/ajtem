@@ -3,15 +3,16 @@
         <!-- Sidebar Widget -->
         <div class="single-sidebar-widget p-30">
             <!-- Social Followers Info -->
+            <h5>AJTEM</h5>
             <div class="social-followers-info">
                 <!-- Facebook -->
-                <a href="#" class="facebook-fans"><i class="fa fa-facebook"></i> 4,360 <span>Fans</span></a>
+                <a href="#" class="facebook-fans"><i class=""></i> Call for Papers</a>
                 <!-- Twitter -->
-                <a href="#" class="twitter-followers"><i class="fa fa-twitter"></i> 3,280 <span>Followers</span></a>
+                <a href="#" class="twitter-followers"><i class=""></i> Author Guidelines</a>
                 <!-- YouTube -->
-                <a href="#" class="youtube-subscribers"><i class="fa fa-youtube"></i> 1250 <span>Subscribers</span></a>
+                <a href="#" class="youtube-subscribers"><i class=""></i> Editorial Policy</a>
                 <!-- Google -->
-                <a href="#" class="google-followers"><i class="fa fa-google-plus"></i> 4,230 <span>Followers</span></a>
+{{--                <a href="#" class="google-followers"><i class="fa fa-google-plus"></i> 4,230 <span>Followers</span></a>--}}
             </div>
         </div>
 
@@ -33,9 +34,9 @@
         </div>
 
         <!-- Sidebar Widget -->
-        <div class="single-sidebar-widget">
-            <a href="#" class="add-img"><img src="{{ URL::to('assets/img/bg-img/add2.png') }}" alt=""></a>
-        </div>
+{{--        <div class="single-sidebar-widget">--}}
+{{--            <a href="#" class="add-img"><img src="{{ URL::to('assets/img/bg-img/add2.png') }}" alt=""></a>--}}
+{{--        </div>--}}
 
         <!-- Sidebar Widget -->
         <div class="single-sidebar-widget p-30">

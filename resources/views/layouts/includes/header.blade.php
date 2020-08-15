@@ -27,7 +27,7 @@
                         </div>
 
                         <!-- Nav Start -->
-                        <div class="classynav">
+                        <div class="classynav float-xl-left">
                             <ul>
                                 @if(Auth::check())
                                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
@@ -35,7 +35,7 @@
                                 <li><a href="#">Info</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ route('home') }}">Profile</a></li>
-{{--                                        <li><a href="archive.html">Archive</a></li>--}}
+                                        <li><a href="{{ route('authorguideline') }}">Author Guidelines</a></li>
                                         <li><a href="{{ route('aboutus') }}">About</a></li>
                                         <li><a href="{{ route('contact') }}">Contact</a></li>
                                         <li><a href="{{ route('submitarticle') }}">Submit Article</a></li>
@@ -48,7 +48,8 @@
                                     <li class="active"><a href="{{ route('welcome') }}">Home</a></li>
                                     <li><a href="#">Info</a>
                                         <ul class="dropdown">
-                                            <li><a href="{{ route('user.login') }}">Author Guidelines</a></li>
+                                            <li><a href="{{ route('user.login') }}">Submit Article</a></li>
+                                            <li><a href="{{ route('authorguideline') }}">Author Guidelines</a></li>
                                             <li><a href="{{ route('welcome') }}">Editorial Board</a></li>
                                             <li><a href="{{ route('aboutus') }}">About</a></li>
                                             <li><a href="{{ route('contact') }}">Contact</a></li>
