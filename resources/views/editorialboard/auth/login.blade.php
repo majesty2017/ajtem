@@ -1,40 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Editorial Board - Login</title>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('editorialboard/login/style.css') }}">
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
-    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ asset('editorialboard/login/images/icons/favicon.ico')}}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/vendor/animate/animate.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/vendor/css-hamburgers/hamburgers.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/vendor/select2/select2.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('editorialboard/login/css/main.css')}}">
+    <!--===============================================================================================-->
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <form class="box">
-                    <h1>Login</h1>
-                    <p class="text-muted"> Please enter your login and password!</p>
-                    <input type="text" name="" placeholder="Username">
-                    <input type="password" name="" placeholder="Password">
-                    <a class="forgot text-muted" href="#">Forgot password?</a>
-                    <input type="submit" name="" value="Login" href="#">
-                    <div class="col-md-12">
-                        <ul class="social-network social-circle">
-                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </form>
-            </div>
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('{{ asset('editorialboard/login/images/img-01.jpg')}}');">
+        <div class="wrap-login100 p-t-190 p-b-30">
+            <form class="login100-form validate-form" action="{{ route('editorial.login.submit') }}" method="post">
+                <div class="login100-form-avatar">
+                    <img src="{{ asset('editorialboard/login/images/icons/logo.jpeg')}}" alt="AVATAR">
+                </div>
+
+                <span class="login100-form-title p-t-20 p-b-45">
+						AJTEM - Editorial Board
+					</span>
+
+                @csrf
+
+                <div class="wrap-input100 validate-input m-b-10" data-validate = "Email is required">
+                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
+                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-lock"></i>
+						</span>
+                </div>
+
+
+
+                <div class="wrap-input100 m-b-10">
+                    <input type="checkbox" name="remember" id="remember">
+                    Remember Me
+                </div>
+
+                <div class="container-login100-form-btn p-t-10">
+                    <button class="login100-form-btn" type="submit">
+                        Login
+                    </button>
+                </div>
+
+                <div class="text-center w-full p-t-25 p-b-230">
+                    <a href="#" class="txt1">
+                        Forgot Username / Password?
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+
+
+<!--===============================================================================================-->
+<script src="{{ asset('editorialboard/login/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('editorialboard/login/vendor/bootstrap/js/popper.js')}}"></script>
+<script src="{{ asset('editorialboard/login/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('editorialboard/login/vendor/select2/select2.min.js')}}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('editorialboard/login/js/main.js')}}"></script>
+
 </body>
 </html>

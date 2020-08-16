@@ -125,6 +125,11 @@ Route::prefix('aj-admin')->group(function () {
 
 // Editorial Board
 Route::prefix('aj-editorial')->group(function () {
-   Route::get('/', 'EditorialBoardController@index')->name('dashboard');
+   Route::get('/', 'Auth\EditorialBoardLoginController@showLoginForm')->name('editorial.login');
+
+   Route::post('/', 'Auth\EditorialBoardLoginController@login')->name('editorial.login.submit');
+
+   Route::get('/dashboard', 'EditorialBoardController@index')->name('editorial.dashboard');
+
 });
 
