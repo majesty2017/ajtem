@@ -30,6 +30,8 @@ Route::post('/user/login', 'Auth\LoginController@login')->name('user.login.submi
 //
 Route::get('/user/register', 'Auth\RegisterController@showRegistrationForm')->name('user.register');
 
+Route::get('/user/register/next', 'Auth\RegisterController@showRegistrationForm')->name('next');
+
 //
 Route::post('/user/register', 'Auth\RegisterController@postRegister')->name('user.register.submit');
 
@@ -53,7 +55,7 @@ Route::get('/contact', 'HomeController@contactUs')->name('contact');
 
 Route::get('/single', 'HomeController@contactUs')->name('single.article');
 
-Route::get('/submitarticle', 'HomeController@submitArticle')->name('submitarticle');
+Route::get('/submit-article', 'HomeController@submit')->name('submit.article');
 //
 Route::get('/authorguideline', 'HomeController@authorGuideline')->name('authorguideline');
 

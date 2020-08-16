@@ -20,8 +20,6 @@ class CreateArticlesTable extends Migration
             $table->integer('author_id')->nullable();
             $table->string('title')->nullable();
             $table->string('email')->nullable();
-            $table->string('year')->nullable();
-            $table->string('volume')->nullable();
             $table->string('author')->nullable();
             $table->string('pages')->nullable();
             $table->longText('abstract')->nullable();

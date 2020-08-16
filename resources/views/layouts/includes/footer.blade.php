@@ -5,8 +5,19 @@
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="footer-widget">
                     <!-- Logo -->
-                    <a href="#" class="foo-logo"><img src="{{ URL::asset('assets/img/core-img/logo2.png') }}" alt=""></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    @if(Auth::check())
+                    <a href="{{ route('home') }}" class="foo-logo"><img src="{{ asset('assets/img/core-img/logo.jpeg') }}" alt=""></a>
+                    @else
+                        <a href="{{ route('welcome') }}" class="foo-logo"><img src="{{ asset('assets/img/core-img/logo.jpeg') }}" alt=""></a>
+                    @endif
+                    <p>
+                        The African Journal of Technical Education and Management (AJTEM)
+                        is an international peer-reviewed Journal with the aim of publishing
+                        research findings in the fields of Science, Technology, Arts, Business
+                        and Management Education. It embodies a blend of an interdisciplinary
+                        community of researchers, academics and practitioners (including policy makers)
+                        as its contributors and for its readership.
+                    </p>
                     <div class="footer-social-info">
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>

@@ -74,12 +74,6 @@ class HomeController extends Controller
         return view('pages.contact', compact('articles', 'categories'));
     }
 
-    public function submitArticle() {
-        $articles = Articles::all();
-        $categories = Category::all();
-        return view('pages.submitarticle', compact('articles', 'categories'));
-    }
-
     public function authorGuideline() {
         $articles = Articles::all();
         $categories = Category::all();
@@ -155,5 +149,11 @@ class HomeController extends Controller
     public function downloadGuidelines()
     {
         return response()->download(public_path('assets/authorguideline/AuthorGuidelines.pdf'));
+    }
+
+    public function submit() {
+        $articles = Articles::all();
+        $categories = Category::all();
+        return view('pages.submitarticle', compact('articles', 'categories'));
     }
 }
