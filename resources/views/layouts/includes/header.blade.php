@@ -47,7 +47,7 @@
                                     </li>
                                     <li><a href="{{ route('authorguideline') }}">Author Guidelines</a></li>
                                     <li><a href="{{ route('welcome') }}">Editorial Board</a></li>
-                                    <li><a href="{{ route('submit.article') }}">Submit Article</a></li>
+{{--                                    <li><a href="{{ route('submit.article') }}">Submit Article</a></li>--}}
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 @else
                                     <li class="active"><a href="{{ route('welcome') }}">Home</a></li>
@@ -66,7 +66,7 @@
                                     </li>
                                     <li><a href="{{ route('authorguideline') }}">Author Guidelines</a></li>
                                     <li><a href="{{ route('welcome') }}">Editorial Board</a></li>
-                                    <li><a href="{{ route('submit.article') }}">Submit Article</a></li>
+{{--                                    <li><a href="{{ route('submit.article') }}">Submit Article</a></li>--}}
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 @endif
                             </ul>

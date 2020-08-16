@@ -52,6 +52,11 @@ return [
             'provider' => 'admins',
         ],
 
+        'editorial' => [
+            'driver' => 'session',
+            'provider' => 'editorials',
+        ],
+
         'admin-api' => [
             'driver' => 'token',
             'provider' => 'admins',
@@ -85,6 +90,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'editorials' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Editorial::class,
         ],
 
         // 'users' => [

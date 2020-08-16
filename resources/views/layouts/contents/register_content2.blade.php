@@ -23,7 +23,7 @@
                         <h5>Register to have an account -> next!</h5>
                     </div>
 
-                    <form action="{{ route('user.register.submit') }}" method="post">
+                    <form action="{{ route('next.submit') }}" method="post">
                         @csrf
 
                         <div class="form-group">
@@ -59,6 +59,7 @@
                         <div class="form-group">
                             <label>Gender<span class="required-label">*</span></label>
                             <select type="text" class="form-control @error('gender') is-invalid @enderror" name="gender" id="postal_code">
+                                <option value="">--- Select ---</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Rather Not Say">Rather Not Say</option>
@@ -73,7 +74,12 @@
 
                         <div class="form-group">
                             <label>How Long have you being in Academia?<span class="required-label">*</span></label>
-                            <input type="text" class="form-control @error('academia') is-invalid @enderror" name="academia" id="academia" placeholder="{{ __('How Long have you being in Academia?') }}">
+                            <select type="text" class="form-control @error('academia') is-invalid @enderror" name="academia" id="academia">
+                                <option value="">--- Select ---</option>
+                                <option value="0-5 Years">0-5 Years</option>
+                                <option value="5-10 Years">5-10 Years</option>
+                                <option value="More">More</option>
+                            </select>
                             @error('academia')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

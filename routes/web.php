@@ -16,11 +16,6 @@
  * Welcome pages
 ***/
 
-//Route::get('/mail', function () {
-//    \Illuminate\Support\Facades\Mail::to('email@email.com')->send(new \App\Mail\WelcomeMail());
-//   return new \App\Mail\WelcomeMail();
-//});
-
 Route::get('/', 'WelcomeController@welcome')->name('welcome');
 
 Route::get('/user/login', 'Auth\LoginController@showLoginForm')->name('user.login');
@@ -29,8 +24,6 @@ Route::post('/user/login', 'Auth\LoginController@login')->name('user.login.submi
 
 //
 Route::get('/user/register', 'Auth\RegisterController@showRegistrationForm')->name('user.register');
-
-Route::get('/user/register/next', 'Auth\RegisterController@showRegistrationForm')->name('next');
 
 //
 Route::post('/user/register', 'Auth\RegisterController@postRegister')->name('user.register.submit');
@@ -128,5 +121,10 @@ Route::prefix('aj-admin')->group(function () {
 
     Route::post('/sliders/destroy', 'SliderController@destroy')->name('slider.destroy');
 
+});
+
+// Editorial Board
+Route::prefix('aj-editorial')->group(function () {
+   Route::get('/', 'EditorialBoardController@index')->name('dashboard');
 });
 

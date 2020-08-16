@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -31,6 +32,8 @@ class RegisterController extends Controller
             'state' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'postal_code' => 'required|numeric|max:255',
+            'academia' => 'required|string|max:255',
+            'area_of_expertise1' => 'required|string|max:255'
         ]);
         $user = new User();
         $user->name = $request->name;
@@ -45,18 +48,18 @@ class RegisterController extends Controller
         $user->department = $request->department;
         $user->country = $request->country;
         $user->postal_code = $request->postal_code;
+        $user->phone = $request->phone;
+        $user->fax = $request->fax;
+        $user->researcher_id = $request->researcher_id;
+        $user->gender = $request->gender;
+        $user->academia = $request->academia;
+        $user->area_of_expertise1 = $request->area_of_expertise1;
+        $user->area_of_expertise2 = $request->area_of_expertise2;
+        $user->area_of_expertise3 = $request->area_of_expertise3;
+        $user->area_of_expertise4 = $request->area_of_expertise4;
+        $user->area_of_expertise5 = $request->area_of_expertise5;
+        $user->job_title = $request->job_title;
         $user->save();
-//        Mail::to($request->email)->send(new WelcomeMail());
-        return redirect()->route('next')->with('info', 'Almost done here 🙂');
-    }
-
-    public function nextRegister()
-    {
-        return view('auth.register2');
-    }
-
-    public function submitNext(Request $request)
-    {
-
+        return redirect()->route('user.login')->with('info', 'Thanks for registering. You may now login to submit your manuscript 🙂');
     }
 }
