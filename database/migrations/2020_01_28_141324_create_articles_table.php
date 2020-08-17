@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->integer('admin_id')->nullable();
             $table->integer('category_id')->nullable();
             $table->integer('author_id')->nullable();
+            $table->integer('editorinchief_id')->nullable();
             $table->string('title')->nullable();
             $table->string('email')->nullable();
             $table->string('author')->nullable();

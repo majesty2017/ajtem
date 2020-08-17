@@ -8,7 +8,7 @@ class EditorialBoardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:editorial');
+        $this->middleware('auth:editorial')->except('logout');
     }
 
     public function index()

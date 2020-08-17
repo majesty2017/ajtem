@@ -125,11 +125,40 @@ Route::prefix('aj-admin')->group(function () {
 
 // Editorial Board
 Route::prefix('aj-editorial')->group(function () {
+
    Route::get('/', 'Auth\EditorialBoardLoginController@showLoginForm')->name('editorial.login');
 
    Route::post('/', 'Auth\EditorialBoardLoginController@login')->name('editorial.login.submit');
 
+    Route::get('/logout', 'Auth\EditorialBoardLoginController@logout')->name('editorial.logout');
+
    Route::get('/dashboard', 'EditorialBoardController@index')->name('editorial.dashboard');
+
+});
+
+// Editor in cheif
+Route::prefix('aj-editorinchief')->group(function () {
+
+   Route::get('/', 'Auth\EditorInChiefLoginController@showLoginForm')->name('editorinchief.login');
+
+   Route::post('/', 'Auth\EditorInChiefLoginController@login')->name('editorinchief.login.submit');
+
+    Route::get('/logout', 'Auth\EditorInChiefLoginController@logout')->name('editorinchief.logout');
+
+   Route::get('/dashboard', 'EditorInChiefController@index')->name('editorinchief.dashboard');
+
+});
+
+// Copy Editor
+Route::prefix('aj-copyeditor')->group(function () {
+
+   Route::get('/', 'Auth\CopyEditorLoginController@showLoginForm')->name('copyeditor.login');
+
+   Route::post('/', 'Auth\CopyEditorLoginController@login')->name('copyeditor.login.submit');
+
+    Route::get('/logout', 'Auth\CopyEditorLoginController@logout')->name('copyeditor.logout');
+
+   Route::get('/dashboard', 'CopyEditorController@index')->name('copyeditor.dashboard');
 
 });
 

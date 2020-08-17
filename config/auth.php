@@ -57,6 +57,16 @@ return [
             'provider' => 'editorials',
         ],
 
+        'editorinchief' => [
+            'driver' => 'session',
+            'provider' => 'editorinchiefs',
+        ],
+
+        'copyeditor' => [
+            'driver' => 'session',
+            'provider' => 'copyeditors',
+        ],
+
         'admin-api' => [
             'driver' => 'token',
             'provider' => 'admins',
@@ -95,6 +105,16 @@ return [
         'editorials' => [
             'driver' => 'eloquent',
             'model' => App\Models\Editorial::class,
+        ],
+
+        'editorinchiefs' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\EditorInChief::class,
+        ],
+
+        'copyeditors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\CopyEditor::class,
         ],
 
         // 'users' => [

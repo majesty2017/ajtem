@@ -19,6 +19,7 @@ class CreateEditorialsTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->softDeletes();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
