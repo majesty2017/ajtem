@@ -17,6 +17,24 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('editorinchief.index') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Editor In Chief</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('editorialboard.index') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Editorial Board</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('copyeditor.index') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Copy Editor</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.authors') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Authors</span></a>

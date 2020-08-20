@@ -121,6 +121,33 @@ Route::prefix('aj-admin')->group(function () {
 
     Route::post('/sliders/destroy', 'SliderController@destroy')->name('slider.destroy');
 
+//    Editor In Chief route
+    Route::get('/editor-in-chiefs', 'EditorInChiefController@index')->name('editorinchief.index');
+
+    Route::post('/editor-in-chiefs', 'EditorInChiefController@create')->name('editorinchief.create');
+
+    Route::post('/editor-in-chiefs/edit', 'EditorInChiefController@update')->name('editorinchief.update');
+
+    Route::post('/editor-in-chiefs/destroy', 'EditorInChiefController@destroy')->name('editorinchief.destroy');
+
+//    Editorial Board route
+    Route::get('/editorial-boards', 'EditorialBoardController@index')->name('editorialboard.index');
+
+    Route::post('/editorial-boards', 'EditorialBoardController@create')->name('editorialboard.create');
+
+    Route::post('/editorial-boards/edit', 'EditorialBoardController@update')->name('editorialboard.update');
+
+    Route::post('/editorial-boards/destroy', 'EditorialBoardController@destroy')->name('editorialboard.destroy');
+
+//    Copy Editor route
+    Route::get('/copy-editors', 'CopyEditorController@index')->name('copyeditor.index');
+
+    Route::post('/copy-editors', 'CopyEditorController@create')->name('copyeditor.create');
+
+    Route::post('/copy-editors/edit', 'CopyEditorController@update')->name('copyeditor.update');
+
+    Route::post('/copy-editors/destroy', 'CopyEditorController@destroy')->name('copyeditor.destroy');
+
 });
 
 // Editorial Board
@@ -132,7 +159,7 @@ Route::prefix('aj-editorial')->group(function () {
 
     Route::get('/logout', 'Auth\EditorialBoardLoginController@logout')->name('editorial.logout');
 
-   Route::get('/dashboard', 'EditorialBoardController@index')->name('editorial.dashboard');
+   Route::get('/dashboard', 'EditorialBoardHomeController@index')->name('editorial.dashboard');
 
 });
 
@@ -145,7 +172,7 @@ Route::prefix('aj-editorinchief')->group(function () {
 
     Route::get('/logout', 'Auth\EditorInChiefLoginController@logout')->name('editorinchief.logout');
 
-   Route::get('/dashboard', 'EditorInChiefController@index')->name('editorinchief.dashboard');
+   Route::get('/dashboard', 'EditorInChiefHomeController@index')->name('editorinchief.dashboard');
 
 });
 
@@ -158,7 +185,7 @@ Route::prefix('aj-copyeditor')->group(function () {
 
     Route::get('/logout', 'Auth\CopyEditorLoginController@logout')->name('copyeditor.logout');
 
-   Route::get('/dashboard', 'CopyEditorController@index')->name('copyeditor.dashboard');
+   Route::get('/dashboard', 'CopyEditorHomeController@index')->name('copyeditor.dashboard');
 
 });
 

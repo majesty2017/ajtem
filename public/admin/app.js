@@ -78,4 +78,28 @@ $(document).ready(function () {
         console.log(data);
         $('#publish_article_id').val(data[0]);
     });
+
+//    Editor in chief Edit
+    $('.editEditorInChiefModal').on('click', function () {
+        $('#editEditorInChiefModal').modal('show')
+        $tr = $(this).closest('tr');
+        var data = $tr.children('#td').map(function () {
+            return $(this).text()
+        }).get();
+        console.log(data)
+        $('#edit_id').val(data[0])
+        $('#name').val(data[1])
+        $('#email').val(data[2])
+    })
+
+//    Editor in chief Delete
+    $('.deleteEditorInChiefModal').on('click', function () {
+        $('#deleteEditorInChiefModal').modal('show')
+        $tr = $(this).closest('tr');
+        var data = $tr.children('#td').map(function () {
+            return $(this).text()
+        }).get();
+        console.log(data)
+        $('#delete_id').val(data[0])
+    })
 });

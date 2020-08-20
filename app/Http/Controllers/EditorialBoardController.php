@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Editorial;
 use Illuminate\Http\Request;
 
 class EditorialBoardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:editorial')->except('logout');
+        $this->middleware('auth:admin')->except('logout');
     }
 
     public function index()
     {
-        return view('editorialboard.pages.index');
+        $editorialboards = Editorial::all();
+        return view('admins.admin_pages.editorialboard', compact('editorialboards'));
     }
 }
