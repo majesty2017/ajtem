@@ -148,6 +148,15 @@ Route::prefix('aj-admin')->group(function () {
 
     Route::post('/copy-editors/destroy', 'CopyEditorController@destroy')->name('copyeditor.destroy');
 
+//    Reviewer route
+    Route::get('/reviewers', 'ReviewerController@index')->name('reviewer.index');
+
+    Route::post('/reviewers', 'ReviewerController@create')->name('reviewer.create');
+
+    Route::post('/reviewers/edit', 'ReviewerController@update')->name('reviewer.update');
+
+    Route::post('/reviewers/destroy', 'ReviewerController@destroy')->name('reviewer.destroy');
+
 });
 
 // Editorial Board
@@ -186,6 +195,19 @@ Route::prefix('aj-copyeditor')->group(function () {
     Route::get('/logout', 'Auth\CopyEditorLoginController@logout')->name('copyeditor.logout');
 
    Route::get('/dashboard', 'CopyEditorHomeController@index')->name('copyeditor.dashboard');
+
+});
+
+// Reviewer
+Route::prefix('aj-reviewer')->group(function () {
+
+   Route::get('/', 'Auth\ReviewerLoginController@showLoginForm')->name('reviewer.login');
+
+   Route::post('/', 'Auth\ReviewerLoginController@login')->name('reviewer.login.submit');
+
+    Route::get('/logout', 'Auth\ReviewerLoginController@logout')->name('reviewer.logout');
+
+   Route::get('/dashboard', 'ReviewerHomeController@index')->name('reviewer.dashboard');
 
 });
 

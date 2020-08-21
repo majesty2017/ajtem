@@ -4,13 +4,13 @@
 
       Tip 2: you can also add an image using data-image tag
   -->
-    <div class="logo"><a href="{{ route('editorial.dashboard') }}" class="simple-text logo-normal">
+    <div class="logo"><a href="{{ route('editorinchief.dashboard') }}" class="simple-text logo-normal">
            Welcome, {{ Auth::user()->name }}
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item active  ">
-                <a class="nav-link" href="{{ route('editorial.dashboard') }}">
+                <a class="nav-link" href="{{ route('editorinchief.dashboard') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>

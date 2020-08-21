@@ -1,5 +1,6 @@
 @include('modals.editorinchief.addModal')
 @include('modals.editorinchief.editModal')
+@include('modals.editorinchief.viewModal')
 @include('modals.editorinchief.deleteModal')
 <div class="card">
     <div class="card-header">
@@ -54,7 +55,7 @@
                             <td id="td">{{ $editorinchief->email}}</td>
                             <td>
                                 <button type="button" class="btn btn-primary editEditorInChiefModal"><i class="fa fa-pencil-alt"></i></button>
-                                <button type="button" class="btn btn-info publishEditorInChiefModal"><i class="fa fa-eye"></i></button>
+                                <button type="button" class="btn btn-info viewEditorInChiefModal"><i class="fa fa-eye"></i></button>
                                 <button type="button" class="btn btn-danger deleteEditorInChiefModal"><i class="fas fa-minus-circle"></i></button>
                             </td>
                         </tr>

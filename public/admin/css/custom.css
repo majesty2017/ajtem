@@ -8,3 +8,9 @@
     display: inline-block;
     max-width: 100%;
 }
+
+readonly {
+    display: none;
+    border: none;
+    background-color: white;
+}

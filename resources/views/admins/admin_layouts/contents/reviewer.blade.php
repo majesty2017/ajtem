@@ -1,12 +1,12 @@
-@include('modals.copyeditor.addModal')
-@include('modals.copyeditor.editModal')
-@include('modals.copyeditor.viewModal')
-@include('modals.copyeditor.deleteModal')
+@include('modals.reviewer.addModal')
+@include('modals.reviewer.editModal')
+@include('modals.reviewer.viewModal')
+@include('modals.reviewer.deleteModal')
 <div class="card">
     <div class="card-header">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCopyEditorModal">
-            <i class="fa fa-plus-circle"> {{ __('Create Copy Editor') }}</i>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addReviewerModal">
+            <i class="fa fa-plus-circle"> {{ __('Create Reviewer') }}</i>
         </button>
     </div>
     <div class="card-title">
@@ -16,7 +16,7 @@
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
                 </li>
-                <li class="breadcrumb-item active">{{ __('Copy Editor Table') }}</li>
+                <li class="breadcrumb-item active">{{ __('Reviewer Table') }}</li>
             </ol>
         </div>
     </div>
@@ -35,6 +35,7 @@
                     <tr>
                         <th>#ID</th>
                         <th>Name</th>
+                        <th>Phone</th>
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
@@ -43,20 +44,22 @@
                     <tr>
                         <th>#ID</th>
                         <th>Name</th>
+                        <th>Phone</th>
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>
                     <tbody>
-                    @foreach($copyeditors as $key => $copyeditor)
+                    @foreach($reviewers as $key => $reviewer)
                         <tr>
-                            <td id="td">{{ $copyeditor->id }}</td>
-                            <td id="td">{{ $copyeditor->name}}</td>
-                            <td id="td">{{ $copyeditor->email}}</td>
+                            <td id="td">{{ $reviewer->id }}</td>
+                            <td id="td">{{ $reviewer->name}}</td>
+                            <td id="td">{{ $reviewer->phone}}</td>
+                            <td id="td">{{ $reviewer->email}}</td>
                             <td>
-                                <button type="button" class="btn btn-primary editCopyEditorModal"><i class="fa fa-pencil-alt"></i></button>
-                                <button type="button" class="btn btn-info viewCopyEditorModal"><i class="fa fa-eye"></i></button>
-                                <button type="button" class="btn btn-danger deleteCopyEditorModal"><i class="fas fa-minus-circle"></i></button>
+                                <button type="button" class="btn btn-primary editReviewerModal"><i class="fa fa-pencil-alt"></i></button>
+                                <button type="button" class="btn btn-info viewReviewerModal"><i class="fa fa-eye"></i></button>
+                                <button type="button" class="btn btn-danger deleteReviewerModal"><i class="fas fa-minus-circle"></i></button>
                             </td>
                         </tr>
                     @endforeach

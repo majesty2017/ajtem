@@ -22,7 +22,7 @@ class CreateManuscriptsTable extends Migration
             $table->string('email')->nullable();
             $table->string('author')->nullable();
             $table->longText('abstract')->nullable();
-            $table->string('keyworks=')->nullable();
+            $table->string('keywords')->nullable();
             $table->boolean('status')->default(0);
             $table->string('upload_image')->nullable();
             $table->string('upload_files')->nullable();

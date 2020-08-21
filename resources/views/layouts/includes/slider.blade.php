@@ -40,9 +40,9 @@
                         </div>
                         <a href="" class="post-title" data-animation="fadeInUp" data-delay="300ms">African Journal For Technical Education & Management</a>
                         @if(Auth::check())
-                            <a href="{{ route('submit.article') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Article</i></a>
+                            <a href="{{ route('submit.article') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Manuscript</i></a>
                         @else
-                            <a href="{{ route('user.login') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Article</i></a>
+                            <a href="{{ route('user.login') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Manuscript</i></a>
                         @endif
                     </div>
                 </div>
@@ -63,9 +63,9 @@
                         </div>
                         <a href="" class="post-title" data-animation="fadeInUp" data-delay="300ms">African Journal For Technical  Education & Management</a>
                         @if(Auth::check())
-                        <a href="{{ route('submit.article') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Article</i></a>
+                        <a href="{{ route('submit.article') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Manuscript</i></a>
                         @else
-                            <a href="{{ route('user.login') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Article</i></a>
+                            <a href="{{ route('user.login') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Manuscript</i></a>
                         @endif
                     </div>
                 </div>
@@ -86,9 +86,9 @@
                         </div>
                         <a href="" class="post-title" data-animation="fadeInUp" data-delay="300ms">African Journal For Technical  Education & Management</a>
                         @if(Auth::check())
-                            <a href="{{ route('submit.article') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Article</i></a>
+                            <a href="{{ route('submit.article') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Manuscript</i></a>
                         @else
-                            <a href="{{ route('user.login') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Article</i></a>
+                            <a href="{{ route('user.login') }}" class="video-play w-25" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play text-truncate"> Submit Manuscript</i></a>
                         @endif
                     </div>
                 </div>

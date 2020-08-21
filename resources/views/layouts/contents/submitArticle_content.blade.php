@@ -4,7 +4,7 @@
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="breadcrumb-content">
-                    <h2>Submit Article</h2>
+                    <h2>Submit Manuscript</h2>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Submit Article</li>
+                        <li class="breadcrumb-item active" aria-current="page">Submit Manuscript</li>
                     </ol>
                 </nav>
             </div>
@@ -38,7 +38,7 @@
                 <div class="video-submit-content mb-50 p-30 bg-white box-shadow">
                     <!-- Section Title -->
                     <div class="section-heading">
-                        <h5>Submit your article</h5>
+                        <h5>Submit your manuscript</h5>
                     </div>
 
                     <div class="video-info mt-30">
@@ -47,8 +47,9 @@
                             @csrf
 
                             <div class="form-group">
-                                <label>Article Category<span class="required-label">*</span></label>
+                                <label>Manuscript Category<span class="required-label">*</span></label>
                                 <select name="category_name" class="form-control">
+                                    <option>-- Select -- </option>
                                     @foreach($categories as $key => $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
@@ -85,26 +86,6 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group @error('volume') is-invalid @enderror">
-                                <label>Volume (Optional)</label>
-                                <input type="text" class="form-control" name="volume @error('volume') is-invalid @enderror" placeholder="{{ __('Enter volume (Optional)') }}" value="{{ old('volume') }}">
-                                @error('volume')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-
-                            <div class="form-group @error('pages') is-invalid @enderror">
-                                <label>Pages<span class="required-label">*</span></label>
-                                <input type="text" class="form-control @error('pages') is-invalid @enderror" name="pages" placeholder="{{ __('Enter pages') }}" value="{{ old('pages') }}">
-                                @error('pages')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-
                             <div class="form-group @error('abstract') is-invalid @enderror">
                                 <label>Abstract<span class="required-label">*</span></label>
                                 <textarea name="abstract" class="form-control @error('abstract') is-invalid @enderror" cols="30" rows="10"></textarea>
@@ -125,18 +106,8 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group @error('uploadImage') is-invalid @enderror">
-                                <label>Upload Cover Image<span class="required-label">*</span></label>
-                                <input type="file" class="form-control-file @error('uploadImage') is-invalid @enderror" name="uploadImage" id="upload-image">
-                                    @error('uploadImage')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                            </div>
-
                             <div class="form-group @error('uploadFile') is-invalid @enderror">
-                                <label>Upload Your File<span class="required-label">*</span></label>
+                                <label>Upload Your Manuscript<span class="required-label">*</span></label>
                                 <input type="file" class="form-control-file @error('uploadFile') is-invalid @enderror" name="uploadFile" id="upload-file">
                                     @error('uploadFile')
                                         <span class="invalid-feedback" role="alert">
@@ -145,7 +116,7 @@
                                     @enderror
                             </div>
 
-                            <button type="submit" class="btn mag-btn mt-30"><i class="fa fa-cloud-upload"></i> {{ __('Upload your article') }}</button>
+                            <button type="submit" class="btn mag-btn mt-30"><i class="fa fa-cloud-upload"></i> {{ __('Upload your manuscript') }}</button>
                         </form>
                     </div>
                 </div>

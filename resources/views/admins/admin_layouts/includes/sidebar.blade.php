@@ -35,6 +35,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('reviewer.index') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Reviewer</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.authors') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Authors</span></a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\SuccessMail;
 use App\Models\Articles;
 use App\Models\Category;
+use App\Models\Manuscript;
 use App\Models\Slider;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -94,25 +95,20 @@ class HomeController extends Controller
         $this->validate($request, [
             'title' => 'required|string',
             'author' => 'required|string|max:255',
-            'year' => 'required|numeric',
-            'pages' => 'required|string',
             'abstract' => 'required|string',
+            'tags' => 'required|string',
             'email' => 'required|string|email|unique:articles',
-            'volume' => 'numeric',
-            'uploadImage' => 'required|mimes:jpg,jpeg,svg,png',
             'uploadFile' => 'required|mimes:docx,doc,pdf',
         ]);
 
         $author = \Auth::id();
 
-        $article = new Articles();
+        $article = new Manuscript();
         $article->author_id = $author;
-        $article->category_id = $request->input('category_name');
+        $article->category_id = $request->category_name;
         $article->title = $request['title'];
         $article->email = $request['email'];
-        $article->year = $request['year'];
-        $article->pages = $request['pages'];
-        $article->tags = $request['tags'];
+        $article->keywords = $request['tags'];
         $article->author = $request['author'];
         $article->abstract = $request['abstract'];
 
@@ -123,19 +119,6 @@ class HomeController extends Controller
             $file->move('uploads/articles/files', $filename);
             $article->upload_files = $filename;
         }
-        else {
-            return redirect()->back()->with('info', 'No upload file selected. Please choose a file.');
-        }
-
-        if ($request->hasFile('uploadImage')) {
-            $file = $request->file('uploadImage');
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
-            $file->move('uploads/articles/covers/', $filename);
-            $article->upload_image = $filename;
-        } else {
-            return redirect()->back()->with('info', 'No upload cover image selected. Please choose aa image.');
-        }
 
         User::where('id', Auth::user()->id)->update(['role' => 1]);
 
@@ -143,7 +126,7 @@ class HomeController extends Controller
 
 //        Mail::to($request->email)->send(new SuccessMail());
 
-        return redirect()->back()->with('info', 'Article posted successfully 🙂');
+        return redirect()->back()->with('info', 'Manuscript submited successfully 🙂');
     }
 
     public function downloadGuidelines()

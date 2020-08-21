@@ -67,6 +67,11 @@ return [
             'provider' => 'copyeditors',
         ],
 
+        'reviewer' => [
+            'driver' => 'session',
+            'provider' => 'reviewers',
+        ],
+
         'admin-api' => [
             'driver' => 'token',
             'provider' => 'admins',
@@ -115,6 +120,11 @@ return [
         'copyeditors' => [
             'driver' => 'eloquent',
             'model' => App\Models\CopyEditor::class,
+        ],
+
+        'reviewers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Reviewer::class,
         ],
 
         // 'users' => [

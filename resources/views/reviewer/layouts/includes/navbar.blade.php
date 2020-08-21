@@ -54,7 +54,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="javascript:void(0)">{{ Auth::user()->name ?? '' }}</a>
                         <a class="dropdown-item" href="javascript:void(0)">Member Since - {{ Auth::user()->created_at->format('M d, Y') ?? '' }}</a>
-                        <a class="dropdown-item" href="{{ route('copyeditor.logout') }}">Logout</a>
+                        <a class="dropdown-item" href="{{ route('reviewer.logout') }}">Logout</a>
                     </div>
                 </li>
             </ul>

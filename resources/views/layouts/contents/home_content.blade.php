@@ -437,9 +437,9 @@
         </div>
 
         <!-- Sidebar Widget -->
-        <div class="single-sidebar-widget">
-            <a href="#" class="add-img"><img src="{{ URL::to('assets/img/bg-img/add2.png') }}" alt=""></a>
-        </div>
+{{--        <div class="single-sidebar-widget">--}}
+{{--            <a href="#" class="add-img"><img src="{{ URL::to('assets/img/bg-img/add2.png') }}" alt=""></a>--}}
+{{--        </div>--}}
 
         <!-- Sidebar Widget -->
     @include('layouts.includes.sidebar-widget')
