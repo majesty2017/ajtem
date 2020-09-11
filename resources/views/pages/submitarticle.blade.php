@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Submit Article
-@endsection
+@section('title', 'Submit Manuscript')
 
 @section('content')
     @include('layouts.contents.submitArticle_content')

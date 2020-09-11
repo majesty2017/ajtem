@@ -84,7 +84,7 @@
 
                                 <div class="form-group">
                                     <label>Address<span class="required-label">*</span></label>
-                                    <textarea class="form-control @error('address') is-invalid @enderror" name="address" id="address" rows="1" placeholder="{{ __('Address') }}"></textarea>
+                                    <textarea class="form-control @error('address') is-invalid @enderror" name="address" id="address" placeholder="{{ __('Address') }}"></textarea>
                                     @error('address')
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -113,8 +113,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Area if interest<span class="required-label">*</span></label>
-                                    <input type="text" class="form-control @error('interest') is-invalid @enderror" name="interest" id="interest" placeholder="{{ __('Department') }}">
+                                    <label>Area of interest<span class="required-label">*</span></label>
+                                    <input type="text" class="form-control @error('interest') is-invalid @enderror" name="interest" id="interest" placeholder="{{ __('Area of interest') }}">
                                     @error('interest')
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -376,7 +376,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>State<span class="required-label">*</span></label>
+                                    <label>State</label>
                                     <input type="text" class="form-control @error('state') is-invalid @enderror" name="state" id="state" placeholder="{{ __('State') }}">
                                     @error('state')
                                     <span class="invalid-feedback" role="alert">

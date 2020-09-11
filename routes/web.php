@@ -48,7 +48,7 @@ Route::get('/contact', 'HomeController@contactUs')->name('contact');
 
 Route::get('/single', 'HomeController@contactUs')->name('single.article');
 
-Route::get('/submit-article', 'HomeController@submit')->name('submit.article');
+Route::get('/submit-manuscript', 'HomeController@submit')->name('submit.article');
 //
 Route::get('/authorguideline', 'HomeController@authorGuideline')->name('authorguideline');
 
@@ -56,9 +56,9 @@ Route::get('/checkout', 'HomeController@checkout')->name('checkout');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/article/{id}/view', 'HomeController@viewArticle')->name('article.view');
+Route::get('/manuscript/{id}/view', 'HomeController@viewArticle')->name('article.view');
 
-Route::post('/postarticle', 'HomeController@postArticle')->name('article.post');
+Route::post('/postmanuscript', 'HomeController@postArticle')->name('article.post');
 
 Route::get('/search', 'SearchController@getResults')->name('article.search');
 
@@ -148,6 +148,15 @@ Route::prefix('aj-admin')->group(function () {
 
     Route::post('/copy-editors/destroy', 'CopyEditorController@destroy')->name('copyeditor.destroy');
 
+//    Associate Editor route
+    Route::get('/associate-editors', 'AssociateEditorController@index')->name('associateeditor.index');
+
+    Route::post('/associate-editors', 'AssociateEditorController@create')->name('associateeditor.create');
+
+    Route::post('/associate-editors/edit', 'AssociateEditorController@update')->name('associateeditor.update');
+
+    Route::post('/associate-editors/destroy', 'AssociateEditorController@destroy')->name('associateeditor.destroy');
+
 //    Reviewer route
     Route::get('/reviewers', 'ReviewerController@index')->name('reviewer.index');
 
@@ -183,6 +192,16 @@ Route::prefix('aj-editorinchief')->group(function () {
 
    Route::get('/dashboard', 'EditorInChiefHomeController@index')->name('editorinchief.dashboard');
 
+   Route::get('/manuscript', 'EditorInChiefHomeController@getReviewer')->name('editorinchief.manuscript');
+
+   Route::post('/manuscript', 'EditorInChiefHomeController@sendManuscript')->name('manuscript.send');
+
+    Route::get('/file/{filename}', 'EditorInChiefHomeController@download')->name('manuscript.download');
+
+//    Route::get('/manuscript/{id}/show', 'EditorInChiefHomeController@show')->name('manuscript.show');
+//
+    Route::post('/manuscript/destroy', 'EditorInChiefHomeController@destroy')->name('manuscript.destroy');
+
 });
 
 // Copy Editor
@@ -195,6 +214,19 @@ Route::prefix('aj-copyeditor')->group(function () {
     Route::get('/logout', 'Auth\CopyEditorLoginController@logout')->name('copyeditor.logout');
 
    Route::get('/dashboard', 'CopyEditorHomeController@index')->name('copyeditor.dashboard');
+
+});
+
+// Associate Editor
+Route::prefix('aj-associateeditor')->group(function () {
+
+   Route::get('/', 'Auth\AssociateEditorLoginController@showLoginForm')->name('associateeditor.login');
+
+   Route::post('/', 'Auth\AssociateEditorLoginController@login')->name('associateeditor.login.submit');
+
+    Route::get('/logout', 'Auth\AssociateEditorLoginController@logout')->name('associateeditor.logout');
+
+   Route::get('/dashboard', 'AssociateEditorHomeController@index')->name('associateeditor.dashboard');
 
 });
 

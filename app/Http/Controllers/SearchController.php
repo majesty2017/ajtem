@@ -17,7 +17,7 @@ class SearchController extends Controller
         $articles = Articles::where('tags', 'LIKE', "%{$query}%")
             ->orWhere('title', 'LIKE', "%{$query}%")
             ->orWhere('tags', 'LIKE', "%{$query}%")
-            ->orWhere('year', 'LIKE', "%{$query}%")
+            ->orWhere('abstract', 'LIKE', "%{$query}%")
             ->orWhere('author', 'LIKE', "%{$query}%")
             ->orWhere('pages', 'LIKE', "%{$query}%")
             ->get();

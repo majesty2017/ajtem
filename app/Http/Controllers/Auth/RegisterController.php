@@ -29,7 +29,6 @@ class RegisterController extends Controller
             'address' => 'required|string|max:255',
             'institution' => 'required|string|max:255',
             'interest' => 'required|string|max:255',
-            'state' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'postal_code' => 'required|numeric|max:255',
             'academia' => 'required|string|max:255',

@@ -16,9 +16,9 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('editorinchief.manuscript') }}">
                     <i class="material-icons">person</i>
-                    <p>User Profile</p>
+                    <p>Manuscripts</p>
                 </a>
             </li>
             <li class="nav-item ">
