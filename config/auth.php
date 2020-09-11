@@ -67,6 +67,11 @@ return [
             'provider' => 'copyeditors',
         ],
 
+        'associateeditor' => [
+            'driver' => 'session',
+            'provider' => 'associateeditors',
+        ],
+
         'reviewer' => [
             'driver' => 'session',
             'provider' => 'reviewers',
@@ -120,6 +125,11 @@ return [
         'copyeditors' => [
             'driver' => 'eloquent',
             'model' => App\Models\CopyEditor::class,
+        ],
+
+        'associateeditors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AssociateEditor::class,
         ],
 
         'reviewers' => [

@@ -11,7 +11,7 @@
         </nav>
         <div class="copyright float-right" id="date"> AJTEM
             , Developed with <i class="material-icons">favorite</i> by
-            <a href="https://insightnet.voxgh.com" target="_blank">Insight Network IT Solutions</a> for AJTEM.
+            <a href="https://insightnet.voxgh.com" target="_blank">Directorate of ICT</a> for AJTEM.
         </div>
     </div>
 </footer>
@@ -105,6 +105,7 @@
 <script src="{{ asset('editorialboard/js/plugins/bootstrap-notify.js')}}"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="{{ asset('editorialboard/js/material-dashboard.js?v=2.1.0')}}"></script>
+<script src="{{ asset('editorinchief/js/app.js')}}"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{ asset('editorialboard/demo/demo.js')}}"></script>
 <script>

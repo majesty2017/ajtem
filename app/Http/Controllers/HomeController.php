@@ -103,26 +103,28 @@ class HomeController extends Controller
 
         $author = \Auth::id();
 
-        $article = new Manuscript();
-        $article->author_id = $author;
-        $article->category_id = $request->category_name;
-        $article->title = $request['title'];
-        $article->email = $request['email'];
-        $article->keywords = $request['tags'];
-        $article->author = $request['author'];
-        $article->abstract = $request['abstract'];
+        $manuscript = new Manuscript();
+        $manuscript->author_id = $author;
+        $manuscript->category_id = $request->category_name;
+        $manuscript->title = $request['title'];
+        $manuscript->email = $request['email'];
+        $manuscript->keywords = $request['tags'];
+        $manuscript->author = $request['author'];
+        $manuscript->abstract = $request['abstract'];
 
         if ($request->file('uploadFile')) {
             $file = $request->file('uploadFile');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/articles/files', $filename);
-            $article->upload_files = $filename;
+            $filename = str_replace(' ', '_', $file->getClientOriginalName());
+            $file->move('uploads/manuscripts/files', $filename);
+            $manuscript->upload_files = $filename;
         }
+
+        $defaultImage = 'default.jpg';
+        $manuscript->upload_image = $defaultImage;
 
         User::where('id', Auth::user()->id)->update(['role' => 1]);
 
-        $article->save();
+        $manuscript->save();
 
 //        Mail::to($request->email)->send(new SuccessMail());
 

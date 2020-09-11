@@ -190,6 +190,43 @@ $(document).ready(function () {
         $('#delete_id').val(data[0])
     })
 
+//    Associate Editor edit
+    $('.editAssociateEditorModal').on('click', function () {
+        $('#editAssociateEditorModal').modal('show')
+        $tr = $(this).closest('tr');
+        var data = $tr.children('#td').map(function () {
+            return $(this).text()
+        }).get();
+        console.log(data)
+        $('#edit_id').val(data[0])
+        $('#name').val(data[1])
+        $('#email').val(data[2])
+    })
+
+//    Associate Editor view
+    $('.viewAssociateEditorModal').on('click', function () {
+        $('#viewAssociateEditorModal').modal('show')
+        $tr = $(this).closest('tr');
+        var data = $tr.children('#td').map(function () {
+            return $(this).text()
+        }).get();
+        console.log(data)
+        $('#view_id').val(data[0])
+        $('#view_name').val(data[1])
+        $('#view_email').val(data[2])
+    })
+
+//    Associate Editor Delete
+    $('.deleteAssociateEditorModal').on('click', function () {
+        $('#deleteAssociateEditorModal').modal('show')
+        $tr = $(this).closest('tr');
+        var data = $tr.children('#td').map(function () {
+            return $(this).text()
+        }).get();
+        console.log(data)
+        $('#delete_id').val(data[0])
+    })
+
 //    Reviewer edit
     $('.editReviewerModal').on('click', function () {
         $('#editReviewerModal').modal('show')

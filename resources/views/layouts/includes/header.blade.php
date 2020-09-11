@@ -35,18 +35,18 @@
                                     <li><a href="{{ route('submit.article') }}">Submit Manuscript</a>
                                         <ul class="dropdown">
                                             @if(Auth::check())
-                                                <li><a href="">Premium</a></li>
+{{--                                                <li><a href="">Premium</a></li>--}}
                                                 <li><a href="{{ route('logout') }}">Logout</a></li>
                                                 <li><a href="{{ route('aboutus') }}">About</a></li>
                                             @else
-                                                <li><a href="">Premium</a></li>
+{{--                                                <li><a href="">Premium</a></li>--}}
                                                 <li><a href="{{ route('user.login') }}">Login</a></li>
                                                 <li><a href="{{ route('aboutus') }}">About</a></li>
                                             @endif
                                         </ul>
                                     </li>
                                     <li><a href="{{ route('authorguideline') }}">Author Guidelines</a></li>
-                                    <li><a href="{{ route('welcome') }}">Editorial Board</a></li>
+{{--                                    <li><a href="{{ route('welcome') }}">Editorial Board</a></li>--}}
 {{--                                    <li><a href="{{ route('submit.article') }}">Submit Article</a></li>--}}
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 @else
@@ -54,18 +54,18 @@
                                     <li><a href="{{ route('user.login') }}">Submit Manuscript</a>
                                         <ul class="dropdown">
                                             @if(Auth::check())
-                                                <li><a href="">Premium</a></li>
+{{--                                                <li><a href="">Premium</a></li>--}}
                                                 <li><a href="{{ route('logout') }}">Logout</a></li>
                                                 <li><a href="{{ route('aboutus') }}">About</a></li>
                                             @else
-                                                <li><a href="">Premium</a></li>
+{{--                                                <li><a href="">Premium</a></li>--}}
                                                 <li><a href="{{ route('user.login') }}">Login</a></li>
                                                 <li><a href="{{ route('aboutus') }}">About</a></li>
                                             @endif
                                         </ul>
                                     </li>
                                     <li><a href="{{ route('authorguideline') }}">Author Guidelines</a></li>
-                                    <li><a href="{{ route('welcome') }}">Editorial Board</a></li>
+{{--                                    <li><a href="{{ route('welcome') }}">Editorial Board</a></li>--}}
 {{--                                    <li><a href="{{ route('submit.article') }}">Submit Article</a></li>--}}
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 @endif

@@ -42,4 +42,9 @@ class EditorInChief extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function reviewer()
+    {
+        return $this->belongsTo(Reviewer::class);
+    }
 }

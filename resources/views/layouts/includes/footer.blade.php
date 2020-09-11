@@ -107,8 +107,7 @@
                 <div class="col-12 col-sm-6">
                     <p class="copywrite-text">
                         {{ __('Copyright ') }} &copy; {{ __(' Ajtem 2019') }} - {{ date('Y') }}{{ __('. All rights reserved | Developed with') }} <i class="fa fa-heart-o" aria-hidden="true">
-
-                        </i> by <a href="https://insightnet.voxgh.com" target="_blank">{{ __('Insight Networks & IT Solutions') }}</a>
+                        </i> by <a href="#" target="_blank">{{ __('The Directorate of ICT ') }}</a>
                     </p>
                 </div>
                 <div class="col-12 col-sm-6">
