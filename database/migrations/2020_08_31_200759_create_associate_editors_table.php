@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewersTable extends Migration
+class CreateAssociateEditorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateReviewersTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviewers', function (Blueprint $table) {
+        Schema::create('associate_editors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('phone');
             $table->string('email');
             $table->string('password');
             $table->softDeletes();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateReviewersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviewers');
+        Schema::dropIfExists('associate_editors');
     }
 }
