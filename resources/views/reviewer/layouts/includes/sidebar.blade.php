@@ -16,9 +16,15 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="">
-                    <i class="material-icons">person</i>
-                    <p>User Profile</p>
+                <a class="nav-link" href="{{ route('reviewer.manuscript') }}">
+                    <i class="material-icons">book</i>
+                    <p>Manuscripts</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('manuscript.reviewed') }}">
+                    <i class="material-icons">book</i>
+                    <p>Reviewed Manuscripts</p>
                 </a>
             </li>
             <li class="nav-item ">

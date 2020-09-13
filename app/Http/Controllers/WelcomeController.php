@@ -14,7 +14,10 @@ class WelcomeController
         $articles = Articles::all();
         $categories = Category::all();
         $published_articles = Articles::all()->where('is_published', 1)->take(4);
-        $specials = Articles::all()->where('is_published', 1)->take(1)->sortByDesc('created_at');
+        $specials = Articles::all()
+            ->where('is_published', 1)
+            ->take(1)
+            ->sortByDesc('created_at');
         $sliders = Slider::all()->take(4);
         return view('welcome', compact(
             'articles',

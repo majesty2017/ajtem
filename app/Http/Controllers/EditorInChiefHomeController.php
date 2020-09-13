@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Articles;
 use App\Models\Manuscript;
 use App\Models\Reviewer;
 use App\Models\ReviewManuscript;
@@ -16,7 +17,16 @@ class EditorInChiefHomeController extends Controller
 
     public function index()
     {
-        return view('editorinchief.pages.index');
+        $manuscriptCount = Manuscript::all()->count();
+        $manuscriptUnderReviewCount = ReviewManuscript::all()->where('status', 0)->count();
+        $manuscriptReviewedCount = ReviewManuscript::all()->where('status', 1)->count();
+        $publishedArticle = Articles::all()->where('is_published', 1)->count();
+        return view('editorinchief.pages.index', compact(
+        'manuscriptCount',
+            'manuscriptUnderReviewCount',
+                'manuscriptReviewedCount',
+                'publishedArticle'
+        ));
     }
 
     public function getReviewer()
@@ -50,6 +60,11 @@ class EditorInChiefHomeController extends Controller
         return redirect()->back()->with('info', 'Manuscript deleted successfully 🙂');
     }
 
+    public function getManuscriptUnderReview()
+    {
+        $manuscripts = Manuscript::all()->where('status', 0);
+        return view('editorinchief.pages.manuscriptunderreview', compact('manuscripts'));
+    }
 
 
 
@@ -58,8 +73,11 @@ class EditorInChiefHomeController extends Controller
 
 
 //    Download manuscript method
-    public function download($filename=null)
+    public function download($filename = null, $id = null)
     {
+        Manuscript::where('id', $id)->update([
+           'is_viewed' => 1
+        ]);
         return response()->download(public_path('uploads/manuscripts/files/' . $filename));
     }
 }

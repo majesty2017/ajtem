@@ -23,7 +23,8 @@ class CreateManuscriptsTable extends Migration
             $table->string('author')->nullable();
             $table->longText('abstract')->nullable();
             $table->string('keywords')->nullable();
-            $table->boolean('status')->default(0);
+            $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('is_viewed')->default(0);
             $table->string('upload_image')->nullable();
             $table->string('upload_files')->nullable();
             $table->softDeletes();

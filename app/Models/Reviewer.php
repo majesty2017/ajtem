@@ -43,4 +43,9 @@ class Reviewer extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function manuscript()
+    {
+        return $this->belongsTo(Manuscript::class);
+    }
 }

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     public function getResults(Request $request) {
-        $query = $request->input('query');
+        $query = $request->query;
         if (!$query || empty($query) || $query == null) {
             return redirect()->back()->with('info', 'No article searched.');
         }

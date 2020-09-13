@@ -31,17 +31,20 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons">notifications</i>
-                        <span class="notification">5</span>
+                        <span class="notification">{{ $is_not_viewed }}</span>
                         <p class="d-lg-none d-md-block">
                             Some Actions
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
-                        <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
-                        <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Another One</a>
+                        @if($not_viewed)
+                        @foreach($not_viewed as $value)
+                        <a class="dropdown-item" href="{{ route('manuscript.notications', [$value->id]) }}">
+                            <img class="rounded" src="{{ asset('uploads/manuscripts/default/default.jpg') }}" style="width: 40px; height: 40px; margin: 8px">
+                            {{ __('New manuscript received') . ' about ' . $value->created_at->diffForHumans() }}
+                        </a>
+                        @endforeach
+                        @endif
                     </div>
                 </li>
                 <li class="nav-item dropdown">

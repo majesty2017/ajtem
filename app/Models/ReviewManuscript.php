@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ReviewManuscript extends Model
 {
     use SoftDeletes;
+
+    public function reviewer()
+    {
+        return $this->belongsTo(Reviewer::class);
+    }
 }

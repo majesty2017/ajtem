@@ -196,6 +196,8 @@ Route::prefix('aj-editorinchief')->group(function () {
 
    Route::post('/manuscript', 'EditorInChiefHomeController@sendManuscript')->name('manuscript.send');
 
+   Route::get('/manuscript-under-review', 'EditorInChiefHomeController@getManuscriptUnderReview')->name('manuscript.underreview');
+
     Route::get('/file/{filename}', 'EditorInChiefHomeController@download')->name('manuscript.download');
 
 //    Route::get('/manuscript/{id}/show', 'EditorInChiefHomeController@show')->name('manuscript.show');
@@ -240,6 +242,18 @@ Route::prefix('aj-reviewer')->group(function () {
     Route::get('/logout', 'Auth\ReviewerLoginController@logout')->name('reviewer.logout');
 
    Route::get('/dashboard', 'ReviewerHomeController@index')->name('reviewer.dashboard');
+
+   Route::get('/manuscript', 'ReviewerHomeController@manuscript')->name('reviewer.manuscript');
+
+    Route::get('/file/{id}/{filename}', 'ReviewerHomeController@download')->name('manuscript.download');
+
+    Route::get('/file/{filename}', 'ReviewerHomeController@downloadReviewedManuscript')->name('manuscript.downloadreviewed');
+
+    Route::post('/manuscript', 'ReviewerHomeController@resendManuscript')->name('manuscript.resend');
+
+    Route::get('/manuscript/reviewed', 'ReviewerHomeController@reviewedManuscript')->name('manuscript.reviewed');
+
+    Route::get('/notications/{id}', 'ReviewerHomeController@notications')->name('manuscript.notications');
 
 });
 

@@ -57,15 +57,14 @@
                     <div class="card-icon">
                         <i class="material-icons">content_copy</i>
                     </div>
-                    <p class="card-category">Used Space</p>
-                    <h3 class="card-title">49/50
-                        <small>GB</small>
+                    <p class="card-category">Manuscripts</p>
+                    <h3 class="card-title">{{ $manuscriptCount }}
                     </h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-warning">warning</i>
-                        <a href="#pablo" class="warning-link">Get More Space...</a>
+                        <a href="{{ route('editorinchief.manuscript') }}" class="warning-link">Read More...</a>
                     </div>
                 </div>
             </div>
@@ -76,12 +75,12 @@
                     <div class="card-icon">
                         <i class="material-icons">store</i>
                     </div>
-                    <p class="card-category">Revenue</p>
-                    <h3 class="card-title">$34,245</h3>
+                    <p class="card-category">Manuscripts Under Review</p>
+                    <h3 class="card-title">{{ $manuscriptUnderReviewCount }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">date_range</i> Last 24 Hours
+                        <i class="material-icons">date_range</i> <a href="{{ route('manuscript.underreview') }}">View More...</a>
                     </div>
                 </div>
             </div>
@@ -92,12 +91,12 @@
                     <div class="card-icon">
                         <i class="material-icons">info_outline</i>
                     </div>
-                    <p class="card-category">Fixed Issues</p>
-                    <h3 class="card-title">75</h3>
+                    <p class="card-category">Reviwed Manuscripts</p>
+                    <h3 class="card-title">{{ $manuscriptReviewedCount }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">local_offer</i> Tracked from Github
+                        <i class="material-icons">local_offer</i> <a href="#">View More...</a>
                     </div>
                 </div>
             </div>
@@ -106,14 +105,14 @@
             <div class="card card-stats">
                 <div class="card-header card-header-info card-header-icon">
                     <div class="card-icon">
-                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-book"></i>
                     </div>
-                    <p class="card-category">Followers</p>
-                    <h3 class="card-title">+245</h3>
+                    <p class="card-category">Published Articles</p>
+                    <h3 class="card-title">{{ $publishedArticle }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">update</i> Just Updated
+                        <i class="material-icons">book</i> <a href="#">View More...</a>
                     </div>
                 </div>
             </div>
