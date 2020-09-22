@@ -51,19 +51,19 @@
                 <div class="footer-widget">
                     <h6 class="widget-title">Sport Videos</h6>
                     <!-- Single Blog Post -->
-                    <div class="single-blog-post style-2 d-flex">
-                        <div class="post-thumbnail">
-                            <img src="{{ URL::asset('assets/img/bg-img/12.jpg') }}" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="#" class="post-title">Take A Romantic Break In A Boutique Hotel</a>
-                            <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="single-blog-post style-2 d-flex">--}}
+{{--                        <div class="post-thumbnail">--}}
+{{--                            <img src="{{ URL::asset('assets/img/bg-img/12.jpg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="post-content">--}}
+{{--                            <a href="#" class="post-title">Take A Romantic Break In A Boutique Hotel</a>--}}
+{{--                            <div class="post-meta d-flex justify-content-between">--}}
+{{--                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>--}}
+{{--                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>--}}
+{{--                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
 

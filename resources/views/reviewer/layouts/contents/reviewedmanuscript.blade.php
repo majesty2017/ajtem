@@ -21,10 +21,10 @@
                                     ID
                                 </th>
                                 <th>
-                                    File
+                                    Note
                                 </th>
                                 <th>
-                                    Note
+                                    File
                                 </th>
                                 <th>
                                     Created At

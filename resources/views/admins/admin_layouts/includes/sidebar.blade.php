@@ -57,4 +57,10 @@
             <i class="fas fa-fw fa-images"></i>
             <span>Sliders</span></a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-images"></i>
+            <span>Logo</span></a>
+    </li>
 </ul>

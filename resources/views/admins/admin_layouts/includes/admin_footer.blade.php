@@ -2,7 +2,7 @@
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
             <span>Copyright © {{ __('Ajtem - Admins Dashboard  2019') }} - {{ date('Y') }}. Developed By: <a
-                        href="https://insightnet.voxgh.com" target="_blank">Insight Network IT Solution</a></span>
+                        href="https://insightnet.voxgh.com" target="_blank">Directorate of ICT</a></span>
         </div>
     </div>
 </footer>

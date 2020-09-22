@@ -21,6 +21,9 @@
                                     ID
                                 </th>
                                 <th>
+                                    Note
+                                </th>
+                                <th>
                                     File
                                 </th>
                                 <th>
@@ -38,9 +41,10 @@
                                 @foreach($manuscripts as $manuscript)
                                     <tr>
                                         <td id="td">{{ $id++ ?? $manuscript->id}}</td>
+                                        <td id="td">{{ $manuscript->note}}</td>
                                         @if($manuscript->manuscript)
                                             <td>
-                                                <a href="{{ route('manuscript.download', [$manuscript->id, $manuscript->manuscript]) }}"><img src="{{ asset('uploads/manuscripts/default/default.jpg') }}" style="width: 70px; height: 70px" class="rounded"> Download</a>
+                                                <a href="{{ route('manuscript.getdownload', [$manuscript->id, $manuscript->manuscript]) }}"><img src="{{ asset('uploads/manuscripts/default/default.jpg') }}" style="width: 70px; height: 70px" class="rounded"> Download</a>
                                             </td>
                                         @endif
                                         <td>{{ $manuscript->created_at->diffForHumans() }}</td>

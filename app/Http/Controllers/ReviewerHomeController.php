@@ -137,7 +137,7 @@ class ReviewerHomeController extends Controller
 
 
 
-    public function notications($id = null)
+    public function notifications($id = null)
     {
         if ($id) {
             ReviewManuscript::where('id', $id)

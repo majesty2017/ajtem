@@ -75,4 +75,6 @@ class SliderController extends Controller
         $slider->delete();
         return redirect()->back()->with('info', 'Slider image deleted successfully.');
     }
+
+
 }

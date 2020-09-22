@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     public function getResults(Request $request) {
-        $query = $request->query;
+        $query = $request->input('query');
         if (!$query || empty($query) || $query == null) {
             return redirect()->back()->with('info', 'No article searched.');
         }
@@ -21,6 +21,9 @@ class SearchController extends Controller
             ->orWhere('author', 'LIKE', "%{$query}%")
             ->orWhere('pages', 'LIKE', "%{$query}%")
             ->get();
+        if ($articles == null || empty($articles) || !$articles) {
+            return redirect()->back()->with('info', 'No article found.');
+        }
 
         $categories = Category::all();
         return view('layouts.search.results', compact('articles', 'categories', 'query'));

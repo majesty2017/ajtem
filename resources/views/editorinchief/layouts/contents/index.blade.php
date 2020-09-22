@@ -91,12 +91,12 @@
                     <div class="card-icon">
                         <i class="material-icons">info_outline</i>
                     </div>
-                    <p class="card-category">Reviwed Manuscripts</p>
+                    <p class="card-category">Manuscripts Review Completed</p>
                     <h3 class="card-title">{{ $manuscriptReviewedCount }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">local_offer</i> <a href="#">View More...</a>
+                        <i class="material-icons">local_offer</i> <a href="{{ route('manuscript.reviewed') }}">View More...</a>
                     </div>
                 </div>
             </div>

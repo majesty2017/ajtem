@@ -7,11 +7,11 @@
                 <div class="card card-plain">
                     <div class="card-header card-header-primary">
                         <!-- Button trigger modal -->
-{{--                        <button type="button" class="btn btn-outline-primary pull-right" data-toggle="modal" data-target="#sendManuscriptModal">--}}
-{{--                            <i class="material-icons">add</i> Send Manuscript--}}
-{{--                        </button>--}}
-                        <h4 class="card-title mt-0">Manuscript Under Review Table</h4>
-                        <p class="card-category"> This is manuscript under review table</p>
+                        <button type="button" class="btn btn-outline-primary pull-right" data-toggle="modal" data-target="#sendManuscriptModal">
+                            <i class="material-icons">add</i> Send to CE Manuscript
+                        </button>
+                        <h4 class="card-title mt-0"> Reviewed Manuscript Table</h4>
+                        <p class="card-category"> This is reviewed manuscript table</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -21,7 +21,7 @@
                                     ID
                                 </th>
                                 <th>
-                                    Reviewer Name
+                                    Name
                                 </th>
                                 <th>
                                     Note
@@ -45,9 +45,10 @@
                                 <tr>
                                     <td id="td">{{ $id++ ?? $manuscript->id}}</td>
                                     <td id="td">{{ $manuscript->reviewer->name ?? '' }}</td>
-                                    <td id="td">{{ $manuscript->note ?? 'N/A' }}</td>
+                                    <td id="td">{{ $manuscript->note }}</td>
                                     @if($manuscript->manuscript)
-                                    <td><img src="{{ asset('uploads/manuscripts/default/default.jpg') }}" style="width: 70px; height: 70px" class="rounded">
+                                    <td>
+                                        <a href="{{ route('manuscript.download', [$manuscript->manuscript]) }}"><img src="{{ asset('uploads/manuscripts/default/default.jpg') }}" style="width: 70px; height: 70px" class="rounded"> Download</a>
                                     </td>
                                     @endif
                                     <td>{{ $manuscript->created_at->diffForHumans() }}</td>

@@ -14,6 +14,11 @@
                         @csrf
 
                         <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Add Note (Optional)</label>
+                            <textarea class="form-control" name="note" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label>Select Reviewer</label>
                             <select class="form-control bg-dark" name="reviewer_id">
                                 <option class="text-black">-- Select --</option>

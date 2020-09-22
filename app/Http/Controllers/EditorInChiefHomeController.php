@@ -7,6 +7,7 @@ use App\Models\Manuscript;
 use App\Models\Reviewer;
 use App\Models\ReviewManuscript;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EditorInChiefHomeController extends Controller
 {
@@ -18,22 +19,73 @@ class EditorInChiefHomeController extends Controller
     public function index()
     {
         $manuscriptCount = Manuscript::all()->count();
-        $manuscriptUnderReviewCount = ReviewManuscript::all()->where('status', 0)->count();
-        $manuscriptReviewedCount = ReviewManuscript::all()->where('status', 1)->count();
-        $publishedArticle = Articles::all()->where('is_published', 1)->count();
+
+        $manuscriptUnderReviewCount = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 0)
+            ->count();
+
+        $manuscriptReviewedCount = ReviewManuscript::all()
+            ->where('status', 1)
+            ->where('is_viewed', 1)
+            ->count();
+
+        $publishedArticle = Articles::all()
+            ->where('is_published', 1)
+            ->count();
+
+        $manuscriptReceivedCount = ReviewManuscript::all()
+            ->where('status', 1)
+            ->where('is_viewed', 1)
+            ->count();
+
+        $manuscriptReceivedFromReviewer = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1);
+
+        $manuscriptReceivedFromAuthor = Manuscript::all()
+            ->where('is_viewed', 0)
+            ->where('status', 0)
+            ->sortByDesc('created_at');
+
         return view('editorinchief.pages.index', compact(
         'manuscriptCount',
             'manuscriptUnderReviewCount',
                 'manuscriptReviewedCount',
-                'publishedArticle'
+                'publishedArticle',
+                'manuscriptReceivedCount',
+                'manuscriptReceivedFromAuthor',
+                'manuscriptReceivedFromReviewer'
         ));
     }
 
     public function getReviewer()
     {
         $reviewers = Reviewer::all();
+
         $manuscripts = Manuscript::all()->sortByDesc('created_at');
-        return view('editorinchief.pages.manuscript', compact('reviewers', 'manuscripts'));
+
+        $manuscriptReceivedCount = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1)
+            ->count();
+
+        $manuscriptReceivedFromAuthor = Manuscript::all()
+            ->where('is_viewed', 0)
+            ->where('status', 0)
+            ->sortByDesc('created_at');
+
+        $manuscriptReceivedFromReviewer = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1);
+
+        return view('editorinchief.pages.manuscript', compact(
+            'reviewers',
+            'manuscripts',
+            'manuscriptReceivedCount',
+            'manuscriptReceivedFromAuthor',
+            'manuscriptReceivedFromReviewer'
+        ));
     }
 
     public function sendManuscript(Request $request)
@@ -43,6 +95,7 @@ class EditorInChiefHomeController extends Controller
         ]);
         $manuscript = new ReviewManuscript();
         $manuscript->reviewer_id = $request->reviewer_id;
+        $manuscript->note = $request->note;
         if ($request->hasFile('upload_file')) {
             $file = $request->file('upload_file');
             $filename = $file->getClientOriginalName();
@@ -62,9 +115,89 @@ class EditorInChiefHomeController extends Controller
 
     public function getManuscriptUnderReview()
     {
-        $manuscripts = Manuscript::all()->where('status', 0);
-        return view('editorinchief.pages.manuscriptunderreview', compact('manuscripts'));
+        $manuscripts = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 0)
+            ->sortByDesc('created_at');
+
+        $manuscriptReceivedCount = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1)
+            ->count();
+
+        $manuscriptReceivedFromAuthor = Manuscript::all()
+            ->where('is_viewed', 0)
+            ->where('status', 0)
+            ->sortByDesc('created_at');
+
+        $manuscriptReceivedFromAuthorCount = Manuscript::all()
+            ->where('is_viewed', 0)->count();
+
+        $manuscriptReceivedFromReviewer = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1);
+
+        return view('editorinchief.pages.manuscriptunderreview', compact(
+            'manuscripts',
+            'manuscriptReceivedCount',
+            'manuscriptReceivedFromAuthor',
+            'manuscriptReceivedFromAuthorCount',
+            'manuscriptReceivedFromReviewer'
+        ));
     }
+
+    public function reviewedManuscript()
+    {
+        $manuscripts = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1)
+            ->sortByDesc('created_at');
+
+        $manuscriptReceivedFromAuthor = Manuscript::all()
+            ->where('is_viewed', 0)
+            ->where('status', 0)
+            ->sortByDesc('created_at');
+
+        $manuscriptReceivedCount = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1)
+            ->count();
+
+        $manuscriptReceivedFromReviewer = ReviewManuscript::all()
+            ->where('is_viewed', 1)
+            ->where('status', 1)
+            ->sortByDesc('created_at');
+
+        $manuscriptReceivedFromAuthorCount = Manuscript::all()
+        ->where('is_viewed', 0)->count();
+
+        return view('editorinchief.pages.reviewedmanuscript', compact(
+            'manuscripts',
+            'manuscriptReceivedCount',
+            'manuscriptReceivedFromAuthorCount',
+            'manuscriptReceivedFromAuthor',
+            'manuscriptReceivedFromReviewer'
+        ));
+    }
+
+    public function notifications($id = null)
+    {
+        if ($id) {
+        ReviewManuscript::where('id', $id)
+            ->update([
+                'status' => 2
+            ]);
+        }
+        return redirect()->route('editorinchief.manuscript');
+    }
+
+
+
+
+
+
+
+
 
 
 
@@ -78,6 +211,11 @@ class EditorInChiefHomeController extends Controller
         Manuscript::where('id', $id)->update([
            'is_viewed' => 1
         ]);
-        return response()->download(public_path('uploads/manuscripts/files/' . $filename));
+//        if ($id) {
+//            ReviewManuscript::where('id', $id)->update([
+//                'status' => 1
+//            ]);
+//        }
+        return response()->download('uploads/manuscripts/reviewed_manuscripts/' . $filename);
     }
 }

@@ -22,9 +22,15 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('manuscript.underreview') }}">
                     <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
+                    <p>Manuscript Under Review</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('manuscript.completed') }}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Reviewed Manuscript</p>
                 </a>
             </li>
             <li class="nav-item ">

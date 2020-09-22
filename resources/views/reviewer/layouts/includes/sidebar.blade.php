@@ -28,15 +28,9 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="">
-                    <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('reviewer.manuscript') }}">
                     <i class="material-icons">notifications</i>
-                    <p>Notifications</p>
+                    <p>Notifications <span class="notification text-danger">{{ $is_not_viewed ?? '' }}</span></p>
                 </a>
             </li>
             <!-- <li class="nav-item active-pro ">
